@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>List of Contacts</title>
+</head>
+<body>
+<a href="/add">Add a person</a><br />
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Cell Phone</th>
+        <td>Actions</td>
+    </tr>
+<tr
+        th:each="address : ${addresslist}">
+        <td th:text="${address.name}"></td>
+        <td th:text="${address.phone}"></td>
+    <td>
+            <a th:href="@{/update/{id}(id=${address.id})}">Update</a> -
+            <a th:href="@{/detail/{id}(id=${address.id})}">Details</a> -
+            <a th:href="@{/delete/{id}(id=${address.id})}">Delete</a>
+
+    </td>
+
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title> </title>
+</head>
+<body>
+<a href="/">Current Contacts</a><br />
+ Name :<span th:text="${addresslist.name}" ></span><br />
+Phone :<span th:text="${addresslist.phone}" ></span><br />
+<a th:href="@{/detail/{id}(id=${addresslist.id})}">Detail</a>
+</body>
+</html>
